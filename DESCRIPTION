@@ -4,6 +4,7 @@ Date: 2023-04-02
 Author: Pantxo Diribarne <pantxo.diribarne@gmail.com>
 Maintainer: Pantxo Diribarne <pantxo.diribarne@gmail.com>
 Title: Low-level function for working with hdf5 files.
+Categories: Format
 Description: Collection of Matlab compatible lowlevel functions to handle hdf5 files.
 Depends: octave (>= 5.0.0)
 Url: https://github.com/pantxo/oct-hdf5
