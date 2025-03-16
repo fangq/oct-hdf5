@@ -103,8 +103,8 @@ DEFUN_DLD(walk, args, nargout,
   H5Eclose_stack (estack_id);
 
   // Rethrow previously caugh error if necessary
-  if (! ee.message ().empty ())
-    throw ee;
+  //if (! ee.message ().empty ())
+  //  throw ee;
 
   return retval.append (herr);
 }
