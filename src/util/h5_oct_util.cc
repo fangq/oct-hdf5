@@ -144,7 +144,7 @@ iter_handler (hid_t group_id, const char* name, const H5L_info_t* /*info*/,
   catch (const octave::execution_exception& ee)
     {
       warning ("H5L.iterate: Operator function failed. %s",
-               ee.message ().c_str ());
+               ee.identifier ().c_str ());
 
       status = -1;
     }
@@ -178,7 +178,7 @@ A_iter_handler (hid_t group_id, const char* name, const H5A_info_t* /*info*/,
   catch (const octave::execution_exception& ee)
     {
       warning ("H5L.iterate: Operator function failed. %s",
-               ee.message ().c_str ());
+               ee.identifier ().c_str ());
 
       status = -1;
     }
