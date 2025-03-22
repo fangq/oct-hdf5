@@ -65,7 +65,11 @@ num_attrs; /* # of attributes attached to object \n\
   // Build ouput structure
   octave_scalar_map info_struct;
   info_struct.assign ("fileno", octave_int64 (oinfo.fileno));
+
+#if ((H5_VERS_MAJOR * 1000) + H5_VERS_MINOR) <= 1010
   info_struct.assign ("addr", octave_int64 (oinfo.addr));
+#endif
+
   info_struct.assign ("type", octave_int64 (oinfo.type));
   info_struct.assign ("rc", octave_int64 (oinfo.rc));
   info_struct.assign ("atime", octave_int64 (oinfo.atime));
