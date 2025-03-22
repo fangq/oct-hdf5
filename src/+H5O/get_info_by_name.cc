@@ -57,9 +57,13 @@ num_attrs; /* # of attributes attached to object \n\
   hid_t lapl_id = get_h5_id (args, 2, "LAPL_ID", "H5O.get_info_by_name");
 
   // Infor structur output
-  H5O_info_t oinfo;
+  H5O_info2_t oinfo;
 
-  if (H5Oget_info_by_name (loc_id, name.c_str (), &oinfo, lapl_id) < 0)
+#if ((H5_VERS_MAJOR * 1000) + H5_VERS_MINOR) <= 1012
+  if (H5Oget_info_by_name2 (loc_id, name.c_str (), &oinfo, lapl_id) < 0)
+#else
+  if (H5Oget_info_by_name3 (loc_id, name.c_str (), &oinfo, 0xFFFFFFFF, lapl_id) < 0)
+#endif
     error ("H5O_info2_t *oinfo: unable to get object info");
 
   // Build ouput structure
