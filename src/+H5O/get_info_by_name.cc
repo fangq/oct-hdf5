@@ -59,7 +59,7 @@ num_attrs; /* # of attributes attached to object \n\
   // Infor structur output
   H5O_info_t oinfo;
 
-  if (H5Oget_info_by_name1 (loc_id, name.c_str (), &oinfo, lapl_id) < 0)
+  if (H5Oget_info_by_name (loc_id, name.c_str (), &oinfo, lapl_id) < 0)
     error ("H5O_info2_t *oinfo: unable to get object info");
 
   // Build ouput structure
