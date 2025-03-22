@@ -15,7 +15,7 @@
 #ifndef H5LT_C_H
 #define H5LT_C_H
 
-#include <hdf5/serial/hdf5.h>
+#include <hdf5.h>
 
 #include <octave/octave.h>
 #include <octave/parse.h>
