@@ -59,7 +59,7 @@ num_attrs; /* # of attributes attached to object \n\
   // Infor structur output
   H5O_info_t oinfo;
 
-#if ((H5_VERS_MAJOR * 1000) + H5_VERS_MINOR) <= 1012
+#if ((H5_VERS_MAJOR * 1000) + H5_VERS_MINOR) <= 1010
   if (H5Oget_info_by_name (loc_id, name.c_str (), &oinfo, lapl_id) < 0)
 #else
   if (H5Oget_info_by_name3 (loc_id, name.c_str (), &oinfo, 0xFFFFFFFF, lapl_id) < 0)
