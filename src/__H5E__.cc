@@ -251,8 +251,13 @@ DEFUN_DLD(__H5E_walk__, args, nargout,
   H5Eclose_stack (estack_id);
 
   // Rethrow previously caugh error if necessary
+#if ((H5_VERS_MAJOR * 1000) + H5_VERS_MINOR) > 1010
   if (! ee.message ().empty ())
     throw ee;
+#else
+  if(error_state)
+    verror (ee, "Error: %s", name);
+#endif
 
   return retval.append (herr);
 }
