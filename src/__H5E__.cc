@@ -256,7 +256,7 @@ DEFUN_DLD(__H5E_walk__, args, nargout,
     throw ee;
 #else
   if(error_state)
-    verror (ee, "Error: %s", last_error_message ().c_str());
+    error ("H5E.walk: error detected");
 #endif
 
   return retval.append (herr);
